@@ -13,6 +13,14 @@ $(document).ready(function(){
 		} finally{
 			console.log ('The BadNumber function is done now.');
 		}
+
+		$.ajax({
+			url: '/main/number',
+			data: { errorNumber: ($('.error_number').val())},
+			type: 'POST'
+		}).done(function(data){
+			console.log(data);
+		});
 	};
 
 
